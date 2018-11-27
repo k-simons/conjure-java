@@ -37,7 +37,8 @@ dependencies {
     testCompile sourceSets.generatedObjects.output
     testCompile sourceSets.generatedJersey.output
 
-    processor 'org.immutables:value'
+    annotationProcessor 'org.immutables:value'
+    compileOnly 'org.immutables:value::annotations'
 }
 
 tasks.withType(JavaCompile).matching { it.name == "compileTestJava" }.configureEach {
